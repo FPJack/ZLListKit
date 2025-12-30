@@ -1,6 +1,6 @@
 //
 //  ZLCollectionViewCell.m
-//  GMListKit
+//  ZLListKit
 //
 //  Created by 卿之 on 2024/4/30.
 //
@@ -8,13 +8,13 @@
 #import "ZLCollectionViewCell.h"
 #import <objc/runtime.h>
 
-@interface GMView()
+@interface ZLView()
 @property (nonatomic,strong)CAShapeLayer *maskLayer;
 @property (nonatomic,assign)BOOL invokeThenCallBack;
-@property (nonatomic,copy)void (^layoutSubviewsBlock)(GMView *view);
-@property (nonatomic,copy)void (^initAfterBlock)(GMView *view);
+@property (nonatomic,copy)void (^layoutSubviewsBlock)(ZLView *view);
+@property (nonatomic,copy)void (^initAfterBlock)(ZLView *view);
 @end
-@implementation GMView
+@implementation ZLView
 - (UIStackView *)stackView {
     if (!_stackView) {
         _stackView = [[UIStackView alloc] init];
@@ -112,7 +112,7 @@
     }
     return self;
 }
-- (instancetype)initAfter:(void (^)(GMView*  view))block {
+- (instancetype)initAfter:(void (^)(ZLView*  view))block {
     if (self.invokeThenCallBack) return self;
     if (block) {
         self.invokeThenCallBack = YES;
@@ -122,7 +122,7 @@
     return self;
 }
 
-- (instancetype)hookLayoutSubviews:(void (^)(GMView *view))block {
+- (instancetype)hookLayoutSubviews:(void (^)(ZLView *view))block {
     self.layoutSubviewsBlock = block;
     return self;
 }
@@ -172,15 +172,15 @@
 
 
 
-@interface GMCollectionReusableView()
+@interface ZLCollectionReusableView()
 @property (nonatomic,strong)CAShapeLayer *maskLayer;
 @property (nonatomic,assign)BOOL invokeThenCallBack;
-@property (nonatomic,copy)void (^prepareForReuseBlock)(GMCollectionReusableView *view);
-@property (nonatomic,copy)void (^layoutSubviewsBlock)(GMCollectionReusableView *view);
-@property (nonatomic,copy)void (^initAfterBlock)(GMCollectionReusableView *view);
+@property (nonatomic,copy)void (^prepareForReuseBlock)(ZLCollectionReusableView *view);
+@property (nonatomic,copy)void (^layoutSubviewsBlock)(ZLCollectionReusableView *view);
+@property (nonatomic,copy)void (^initAfterBlock)(ZLCollectionReusableView *view);
 
 @end
-@implementation GMCollectionReusableView
+@implementation ZLCollectionReusableView
 - (UIStackView *)stackView {
     if (!_stackView) {
         _stackView = [[UIStackView alloc] init];
@@ -276,7 +276,7 @@
     if (self.initAfterBlock) self.initAfterBlock(self);
     return self;
 }
-- (instancetype)initAfter:(void (^)(GMCollectionReusableView*  view))block {
+- (instancetype)initAfter:(void (^)(ZLCollectionReusableView*  view))block {
     if (self.invokeThenCallBack) return self;
     if (block) {
         self.invokeThenCallBack = YES;
@@ -285,11 +285,11 @@
     self.initAfterBlock = block;
     return self;
 }
-- (instancetype)hookPrepareForReuse:(void (^)(GMCollectionReusableView *view))block {
+- (instancetype)hookPrepareForReuse:(void (^)(ZLCollectionReusableView *view))block {
     self.prepareForReuseBlock = block;
     return self;
 }
-- (instancetype)hookLayoutSubviews:(void (^)(GMCollectionReusableView *view))block {
+- (instancetype)hookLayoutSubviews:(void (^)(ZLCollectionReusableView *view))block {
     self.layoutSubviewsBlock = block;
     return self;
 }
@@ -521,7 +521,7 @@
 @interface UIView()
 @property (nonatomic, copy) UITapGestureRecognizer *gm_singleTapGesture;
 @end
-@implementation UIView (GMListKit)
+@implementation UIView (ZLListKit)
 static const char *tapActionKey = "TapActionKey";
 static const char *singleTapGestureKey = "singleTapGestureKey";
 - (void)setGm_singleTapGesture:(UITapGestureRecognizer *)gm_singleTapGesture {
@@ -536,7 +536,7 @@ static const char *singleTapGestureKey = "singleTapGestureKey";
     return tapGesture;
 }
 
-- (void)setGm_singleTapAction:(GMSingleTapAction)gm_singleTapAction {
+- (void)setGm_singleTapAction:(ZLSingleTapAction)gm_singleTapAction {
     if (gm_singleTapAction) {
         objc_setAssociatedObject(self, tapActionKey, gm_singleTapAction, OBJC_ASSOCIATION_COPY_NONATOMIC);
         if ([self isKindOfClass:UIImageView.class]) self.userInteractionEnabled = YES;
@@ -545,11 +545,11 @@ static const char *singleTapGestureKey = "singleTapGestureKey";
         [self removeGestureRecognizer:self.gm_singleTapGesture];
     }
 }
-- (GMSingleTapAction)gm_singleTapAction {
+- (ZLSingleTapAction)gm_singleTapAction {
     return objc_getAssociatedObject(self, tapActionKey);
 }
 - (void)gm_singleTapSel {
-    GMSingleTapAction action = objc_getAssociatedObject(self, tapActionKey);
+    ZLSingleTapAction action = objc_getAssociatedObject(self, tapActionKey);
     if (action) action(self);
     
 }

@@ -4,15 +4,18 @@ PODS:
   - FBSnapshotTestCase/Core (2.1.4)
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
+  - Masonry (1.1.0)
   - ZLListKit (0.1.0)
 
 DEPENDENCIES:
   - FBSnapshotTestCase
+  - Masonry
   - ZLListKit (from `../`)
 
 SPEC REPOS:
   trunk:
     - FBSnapshotTestCase
+    - Masonry
 
 EXTERNAL SOURCES:
   ZLListKit:
@@ -20,8 +23,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  ZLListKit: 7d78051e685d873da3abe7fd3ed019c6c1e713eb
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  ZLListKit: 08a41539b54e9fbc6223401fee1fbebac431ff44
 
-PODFILE CHECKSUM: 55e7312155b0a99b76c66fafb2ee2dfe31ca9b2e
+PODFILE CHECKSUM: 6d401cda7d9d18eb2c00022c5a56ee6fbdd9d6e3
 
 COCOAPODS: 1.16.2

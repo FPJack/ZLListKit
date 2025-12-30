@@ -4,7 +4,7 @@ platform :ios, '10.0'
 
 target 'ZLListKit_Example' do
   pod 'ZLListKit', :path => '../'
-
+  pod 'Masonry'
   target 'ZLListKit_Tests' do
     inherit! :search_paths
 
