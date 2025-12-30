@@ -1,0 +1,27 @@
+PODS:
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
+    - FBSnapshotTestCase/Core
+  - ZLListKit (0.1.0)
+
+DEPENDENCIES:
+  - FBSnapshotTestCase
+  - ZLListKit (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - FBSnapshotTestCase
+
+EXTERNAL SOURCES:
+  ZLListKit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+  ZLListKit: 7d78051e685d873da3abe7fd3ed019c6c1e713eb
+
+PODFILE CHECKSUM: 55e7312155b0a99b76c66fafb2ee2dfe31ca9b2e
+
+COCOAPODS: 1.16.2
