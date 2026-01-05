@@ -8,12 +8,12 @@
 #import "ZLItemController.h"
 @class ZLSingleItemController;
 NS_ASSUME_NONNULL_BEGIN
-typedef CGFloat (^GMItemHeight)(ZLSingleItemController *sectionController,UICollectionView * collectionView,NSInteger item,CGFloat width);
-typedef UICollectionViewCell* _Nullable (^GMItemCell)(ZLSingleItemController *sectionController,UICollectionView * collectionView,NSIndexPath *indexPath);
-typedef void (^GMItemSelectCell)(ZLSingleItemController *sectionController,UICollectionView * collectionView,NSIndexPath *indexPath);
+typedef CGFloat (^ZLItemHeight)(ZLSingleItemController *sectionController,UICollectionView * collectionView,NSInteger item,CGFloat width);
+typedef UICollectionViewCell* _Nullable (^ZLItemCell)(ZLSingleItemController *sectionController,UICollectionView * collectionView,NSIndexPath *indexPath);
+typedef void (^ZLItemSelectCell)(ZLSingleItemController *sectionController,UICollectionView * collectionView,NSIndexPath *indexPath);
 
 @interface ZLSingleItemController : ZLItemController
-- (instancetype)initItemHeight:(GMItemHeight)itemHeightBlock dequeueReusableCell:(GMItemCell)itemCellBlock selectCellItem:(GMItemSelectCell)selectCellBlock;
+- (instancetype)initItemHeight:(ZLItemHeight)itemHeightBlock dequeueReusableCell:(ZLItemCell)itemCellBlock selectCellItem:(ZLItemSelectCell)selectCellBlock;
 
 @end
 

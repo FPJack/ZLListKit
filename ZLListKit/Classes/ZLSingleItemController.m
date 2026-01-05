@@ -7,12 +7,12 @@
 
 #import "ZLSingleItemController.h"
 @interface ZLSingleItemController()
-@property (nonatomic,copy)GMItemHeight itemHeightBlock;
-@property (nonatomic,copy)GMItemCell itemCellBlock;
-@property (nonatomic,copy)GMItemSelectCell selectCellBlock;
+@property (nonatomic,copy)ZLItemHeight itemHeightBlock;
+@property (nonatomic,copy)ZLItemCell itemCellBlock;
+@property (nonatomic,copy)ZLItemSelectCell selectCellBlock;
 @end
 @implementation ZLSingleItemController
-- (instancetype)initItemHeight:(GMItemHeight)itemHeightBlock dequeueReusableCell:(GMItemCell)itemCellBlock selectCellItem:(GMItemSelectCell)selectCellBlock {
+- (instancetype)initItemHeight:(ZLItemHeight)itemHeightBlock dequeueReusableCell:(ZLItemCell)itemCellBlock selectCellItem:(ZLItemSelectCell)selectCellBlock {
     ZLSingleItemController *sc = [[self.class alloc] init];
     sc.itemHeightBlock = itemHeightBlock;
     sc.itemCellBlock = itemCellBlock;

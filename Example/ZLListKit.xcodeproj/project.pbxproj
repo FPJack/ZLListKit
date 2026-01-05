@@ -71,7 +71,7 @@
 		8D4BEA3A123E846F7BB03DA1 /* Pods-ZLListKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZLListKit_Example.debug.xcconfig"; path = "Target Support Files/Pods-ZLListKit_Example/Pods-ZLListKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		9D042A2AC652298C03BA9BE3 /* Pods-ZLListKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZLListKit_Tests.release.xcconfig"; path = "Target Support Files/Pods-ZLListKit_Tests/Pods-ZLListKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		EA7A15BDB3108ADBAAFB8ABE /* Pods_ZLListKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZLListKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EA9AE7FC49430963A82536C2 /* ZLListKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ZLListKit.podspec; path = ../ZLListKit.podspec; sourceTree = "<group>"; };
+		EA9AE7FC49430963A82536C2 /* ZLListKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ZLListKit.podspec; path = ../ZLListKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F07DCA6FEABC8C5AB2B63264 /* Pods-ZLListKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZLListKit_Tests.debug.xcconfig"; path = "Target Support Files/Pods-ZLListKit_Tests/Pods-ZLListKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 

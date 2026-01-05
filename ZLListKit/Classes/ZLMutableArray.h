@@ -35,9 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 
-@interface GMSafeMutableArray : NSMutableArray
 
-@end
 
 
 NS_ASSUME_NONNULL_END

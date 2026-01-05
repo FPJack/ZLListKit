@@ -8,14 +8,14 @@
 
 #import "ZLSingleSectionController.h"
 @interface ZLSingleSectionController()
-@property (nonatomic,copy)GMItemsCountBlock itemsCountBlock;
-@property (nonatomic,copy)GMSizeBlock sizeBlock;
-@property (nonatomic,copy)GMCellBlock cellBlock;
-@property (nonatomic,copy)GMDidSelectCellBlock selectBlock;
-@property (nonatomic,copy)GMSupplementaryBlock supplementaryBlock;
+@property (nonatomic,copy)ZLItemsCountBlock itemsCountBlock;
+@property (nonatomic,copy)ZLSizeBlock sizeBlock;
+@property (nonatomic,copy)ZLCellBlock cellBlock;
+@property (nonatomic,copy)ZLDidSelectCellBlock selectBlock;
+@property (nonatomic,copy)ZLSupplementaryBlock supplementaryBlock;
 @end
 @implementation ZLSingleSectionController
-- (instancetype)initItemsCount:(GMItemsCountBlock)itemsCountBlock itemSize:(GMSizeBlock)sizeBlock dequeueReusableCell:(GMCellBlock)cellBlock selectCellItem:(GMDidSelectCellBlock)selectCellBlock{
+- (instancetype)initItemsCount:(ZLItemsCountBlock)itemsCountBlock itemSize:(ZLSizeBlock)sizeBlock dequeueReusableCell:(ZLCellBlock)cellBlock selectCellItem:(ZLDidSelectCellBlock)selectCellBlock{
     ZLSingleSectionController *sc = [[self.class alloc] init];
     sc.itemsCountBlock = itemsCountBlock;
     sc.sizeBlock = sizeBlock;
@@ -24,7 +24,7 @@
     
     return sc;
 }
-- (instancetype)initItemsCount:(GMItemsCountBlock)itemsCountBlock itemSize:(GMSizeBlock)sizeBlock dequeueReusableCell:(GMCellBlock)cellBlock supplementary:(GMSupplementaryBlock)supplementaryBlock selectCellItem:(GMDidSelectCellBlock)selectCellBlock {
+- (instancetype)initItemsCount:(ZLItemsCountBlock)itemsCountBlock itemSize:(ZLSizeBlock)sizeBlock dequeueReusableCell:(ZLCellBlock)cellBlock supplementary:(ZLSupplementaryBlock)supplementaryBlock selectCellItem:(ZLDidSelectCellBlock)selectCellBlock {
     ZLSingleSectionController *sc = [self initItemsCount:itemsCountBlock itemSize:sizeBlock dequeueReusableCell:cellBlock selectCellItem:selectCellBlock];
     sc.supplementaryBlock = supplementaryBlock;
     return sc;

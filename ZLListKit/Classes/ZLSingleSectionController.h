@@ -11,16 +11,16 @@
 @class ZLSingleSectionController;
 NS_ASSUME_NONNULL_BEGIN
 
-typedef CGSize (^GMSizeBlock)(ZLSingleSectionController *sectionController,UICollectionView * collectionView,NSIndexPath *indexPath);
-typedef UICollectionViewCell* _Nullable (^GMCellBlock)(ZLSingleSectionController *sectionController,UICollectionView * collectionView,NSIndexPath *indexPath);
-typedef void (^GMDidSelectCellBlock)(ZLSingleSectionController *sectionController,UICollectionView * collectionView,NSIndexPath *indexPath);
-typedef NSInteger (^GMItemsCountBlock)(ZLSingleSectionController *sectionController,UICollectionView * collectionView,NSInteger section);
-typedef UICollectionReusableView* _Nullable (^GMSupplementaryBlock)(ZLSingleSectionController *sectionController,UICollectionView * collectionView,NSString *kind,NSIndexPath* indexPath);
+typedef CGSize (^ZLSizeBlock)(ZLSingleSectionController *sectionController,UICollectionView * collectionView,NSIndexPath *indexPath);
+typedef UICollectionViewCell* _Nullable (^ZLCellBlock)(ZLSingleSectionController *sectionController,UICollectionView * collectionView,NSIndexPath *indexPath);
+typedef void (^ZLDidSelectCellBlock)(ZLSingleSectionController *sectionController,UICollectionView * collectionView,NSIndexPath *indexPath);
+typedef NSInteger (^ZLItemsCountBlock)(ZLSingleSectionController *sectionController,UICollectionView * collectionView,NSInteger section);
+typedef UICollectionReusableView* _Nullable (^ZLSupplementaryBlock)(ZLSingleSectionController *sectionController,UICollectionView * collectionView,NSString *kind,NSIndexPath* indexPath);
 
 @interface ZLSingleSectionController : ZLSectionController
 
-- (instancetype)initItemsCount:(GMItemsCountBlock)itemsCountBlock itemSize:(GMSizeBlock)sizeBlock dequeueReusableCell:(GMCellBlock)cellBlock selectCellItem:(GMDidSelectCellBlock)selectCellBlock;
-- (instancetype)initItemsCount:(GMItemsCountBlock)itemsCountBlock itemSize:(GMSizeBlock)sizeBlock dequeueReusableCell:(GMCellBlock)cellBlock supplementary:(GMSupplementaryBlock)supplementaryBlock selectCellItem:(GMDidSelectCellBlock)selectCellBlock;
+- (instancetype)initItemsCount:(ZLItemsCountBlock)itemsCountBlock itemSize:(ZLSizeBlock)sizeBlock dequeueReusableCell:(ZLCellBlock)cellBlock selectCellItem:(ZLDidSelectCellBlock)selectCellBlock;
+- (instancetype)initItemsCount:(ZLItemsCountBlock)itemsCountBlock itemSize:(ZLSizeBlock)sizeBlock dequeueReusableCell:(ZLCellBlock)cellBlock supplementary:(ZLSupplementaryBlock)supplementaryBlock selectCellItem:(ZLDidSelectCellBlock)selectCellBlock;
 
 @end
 
