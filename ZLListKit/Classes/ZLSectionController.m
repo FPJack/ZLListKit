@@ -111,6 +111,7 @@
 }
 - (void)reload {
     if (self.indexPaths.count > 0) {
+        [self didUpdateData];
         [self.collectionView reloadItemsAtIndexPaths:self.indexPaths];
     }
 }
