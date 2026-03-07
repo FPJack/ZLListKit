@@ -27,7 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (ObjectType )objectAtIndex:(NSUInteger)idx ;
 - (NSUInteger)indexOfObject:(ObjectType )object;
 - (NSUInteger)count;
-
+- (void)enumerateObjectsUsingBlock:(void (^)(ObjectType obj, NSUInteger idx, BOOL *stop))block;
+- (void)enumerateObjectsWithOptions:(NSEnumerationOptions)opts usingBlock:(void (^)(ObjectType obj, NSUInteger idx, BOOL *stop))block ;
 /// 根据tag值把SectonController进行排序
 /// - Parameter ascending: 是否升序
 - (ZLMutableArray *)sortedSectionControllerDatas:(BOOL )ascending;

@@ -22,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath;
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath;
+- (void)reload;
+- (void)reloadAnimation:(BOOL)animation completion:(void(^)(BOOL finished))completion;
 @end
 
 NS_ASSUME_NONNULL_END

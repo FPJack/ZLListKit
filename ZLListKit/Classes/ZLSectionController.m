@@ -5,16 +5,13 @@
 //  Created by 卿之 on 2024/4/18.
 //  Copyright © 2024 范鹏. All rights reserved.
 //
-
 #import "ZLSectionController.h"
 #import "ZLCollectionView.h"
-
 @interface ZLSectionController()
 @property (nonatomic,weak,readwrite)ZLCollectionView *collectionView;
 @property (nonatomic,readwrite,strong)id datas;
 @property (nonatomic,assign,readwrite)NSInteger section;
 @property (nonatomic,weak,readwrite)UIViewController *viewController;
-
 @end
 @implementation ZLSectionController
 
@@ -112,9 +109,19 @@
         self.datas = self.sectionDatas(self);
     }
 }
-- (void)reloadSectionController {
+- (void)reload {
     if (self.indexPaths.count > 0) {
         [self.collectionView reloadItemsAtIndexPaths:self.indexPaths];
+    }
+}
+- (void)reloadWithAnimation:(BOOL)animation completion:(void(^)(BOOL finished))completion {
+    if (animation) {
+        [self.collectionView performBatchUpdates:^{
+            [self reload];
+        } completion:completion];
+    }else {
+        [self reload];
+        if (completion) completion(YES);
     }
 }
 - (NSMutableArray<NSIndexPath *> *)indexPaths {

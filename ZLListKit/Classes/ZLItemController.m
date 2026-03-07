@@ -17,4 +17,10 @@
 }
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath  {
 }
+- (void)reload{
+    [self.sectionController reloadItemController:self];
+}
+- (void)reloadAnimation:(BOOL)animation completion:(void(^)(BOOL finished))completion{
+    [self.sectionController reloadItemController:self animation:animation completion:completion];
+}
 @end

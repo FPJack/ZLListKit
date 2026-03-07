@@ -105,7 +105,12 @@ static BOOL _isBaseContoller(NSObject *controller) {
 
     return self.datas.count;
 }
-
+- (void)enumerateObjectsUsingBlock:(void (^)(id _Nonnull, NSUInteger, BOOL * _Nonnull))block {
+    [self.datas enumerateObjectsUsingBlock:block];
+}
+- (void)enumerateObjectsWithOptions:(NSEnumerationOptions)opts usingBlock:(void (^)(id _Nonnull, NSUInteger, BOOL * _Nonnull))block {
+    [self.datas enumerateObjectsWithOptions:opts usingBlock:block];
+}
 @end
 
 

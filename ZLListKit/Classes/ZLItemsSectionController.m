@@ -30,4 +30,22 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath  {
     [[self.itemControllers objectAtIndex:indexPath.item] collectionView:collectionView didSelectItemAtIndexPath:indexPath];
 }
+
+- (void)reloadItemController:(ZLItemController *)itemController {
+    NSInteger idx = [self.itemControllers indexOfObject:itemController];
+    if (idx != NSNotFound) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:idx inSection:self.section];
+        [self.collectionView reloadItemsAtIndexPaths:@[indexPath]];
+    }
+}
+- (void)reloadItemController:(ZLItemController *)itemController animation:(BOOL)animation completion:(void(^)(BOOL finished))completion{
+    if (animation) {
+        [self.collectionView performBatchUpdates:^{
+            [self reloadItemController:itemController];
+        } completion:completion];
+    }else {
+        [self reloadItemController:itemController];
+        if (completion) completion(YES);
+    }
+}
 @end
