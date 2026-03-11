@@ -112,7 +112,7 @@
 - (void)reload {
     if (self.indexPaths.count > 0) {
         [self didUpdateData];
-        [self.collectionView reloadItemsAtIndexPaths:self.indexPaths];
+        [self.collectionView reloadSections:[NSIndexSet indexSetWithIndex:self.section]];
     }
 }
 - (void)reloadWithAnimation:(BOOL)animation completion:(void(^)(BOOL finished))completion {
