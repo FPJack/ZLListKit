@@ -33,7 +33,7 @@
 
 - (void)reloadItemController:(ZLItemController *)itemController {
     NSInteger idx = [self.itemControllers indexOfObject:itemController];
-    if (idx != NSNotFound) {
+    if ([self.collectionView.availableSectionControllers indexOfObject:self] != NSNotFound && idx != NSNotFound) {
         NSIndexPath *indexPath = [NSIndexPath indexPathForItem:idx inSection:self.section];
         [self.collectionView reloadItemsAtIndexPaths:@[indexPath]];
     }

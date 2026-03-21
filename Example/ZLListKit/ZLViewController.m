@@ -189,6 +189,5 @@
         sectionVC.footerInset = UIEdgeInsetsMake(0, 10, 0, 10);
         [self.sectionControllers addObject:sectionVC];
     }
-    
 }
 @end

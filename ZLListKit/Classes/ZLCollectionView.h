@@ -41,6 +41,8 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 @interface ZLCollectionView : UICollectionView<UICollectionViewDataSource,UICollectionViewDelegate>
 @property (nonatomic,strong,readonly)ZLMutableArray<ZLSectionController *> *sectionControllers;
+@property (nonatomic,strong,readonly)ZLMutableArray<ZLSectionController *> *availableSectionControllers;
+
 @property (nonatomic,weak)UIViewController *viewController;
 @property (nonatomic,weak)id <ZLListSectionControllerDataSource> listSectonControllerDataSource;
 @property (nonatomic,weak)id <UIScrollViewDelegate> scrollViewDelegate;

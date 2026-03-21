@@ -11,6 +11,8 @@
 
 @interface ZLCollectionView()<CHTCollectionViewDelegateWaterfallLayout,UIScrollViewDelegate,UICollectionViewDelegateFlowLayout>
 @property (nonatomic,strong,readwrite)ZLMutableArray<ZLSectionController *> *sectionControllers;
+@property (nonatomic,strong,readwrite)ZLMutableArray<ZLSectionController *> *availableSectionControllers;
+
 @property (nonatomic,strong)NSMutableDictionary *registerSupplementaryViewsDic;
 @property (nonatomic,strong)NSMutableDictionary *registerCellsDic;
 
@@ -251,4 +253,8 @@
     }
 }
 
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    self.availableSectionControllers = self.sectionControllers.mutableCopy;
+}
 @end
